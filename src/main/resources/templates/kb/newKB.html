@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>New KB Article</title>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">KB Prototype</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-3 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/newKB">New KB Article</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/lookupKB">Lookup KB Article</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/listAllKB">List All KB Articles</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="newKB">
+        <h1>Create New KB Article</h1>
+        <!-- <form action="#" method="POST">
+            <fieldset>
+                <legend>Primary Details</legend>
+                <label for="title">Title:</label>
+                <input class="form-control" type="text" placeholder="Default input">
+
+                <p><input name="title" id="title" type="text"></p>
+            </fieldset>
+        </form> -->
+
+        <div class="container">
+            <form action="/newKB" method="POST">
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" class="form-control" id="title" placeholder="Title" name="title">
+                </div>
+                <div class="form-group">
+                    <label for="keywords">Keywords:</label>
+                    <input type="text" class="form-control" id="keywords"
+                        placeholder="Enter keywords separated by spaces" name="keywords">
+                </div>
+                <div class="form-group">
+                    <label for="summary">Summary of the problem:</label>
+                    <input type="text" class="form-control" id="summary" placeholder="Summary" name="summary">
+                </div>
+                <div class="form-group">
+                    <label for="solution">How to solve the problem:</label>
+                    <textarea class="form-control" id="solution" placeholder="How to solve the problem"
+                        name="solution" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="appliesTo">Applies to:</label>
+                    <select class="form-control" id="appliesTo" name="appliesTo">
+                        <option>PC</option>
+                        <option>Linux</option>
+                        <option>VR</option>
+                        <option>WSL</option>
+                        <option>WSL2</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+
+    </main>
+
+
+
+    <footer>&copy;&nbsp;2019 dustinwright.dev</footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+
+</html>
