@@ -1,0 +1,55 @@
+/* html {
+    background-color: orange;
+} */
+
+/* body styles */
+body {
+	background-color: lightgray;
+}
+
+h1 {
+	text-align: center;
+}
+
+/* main styles */
+main {
+	margin-top: 5em;
+}
+
+main p {
+	margin-left: 1em;
+	text-align: left;
+}
+
+.jumbotron {
+	color: #343a40;
+}
+
+.jumbotron h1 {
+	text-align: center;
+}
+
+.jumbotron p {
+	text-align: left;
+}
+
+/* footer styles */
+footer {
+	width: 100%;
+	bottom: 0;
+	background-color: #343a40 !important;
+	text-align: center;
+	color: rgba(255, 255, 255, .5);
+}
+
+/*
+Source:
+https://stackoverflow.com/questions/27170772/where-to-put-static-files-such-as-css-in-a-spring-boot-project
+
+ywhere beneath src/main/resources/static is an appropriate place for static content such as CSS, JavaScript, and images. The static directory is served from /. For example, src/main/resources/static/signin.css will be served from /signin.css whereas src/main/resources/static/css/signin.css will be served from /css/signin.css.
+
+The src/main/resources/templates folder is intended for view templates that will be turned into HTML by a templating engine such as Thymeleaf, Freemarker, or Velocity, etc. You shouldn't place static content in this directory.
+
+Also make sure you haven't used @EnableWebMvc in your application as that will disable Spring Boot's auto-configuration of Spring MVC.
+
+*/

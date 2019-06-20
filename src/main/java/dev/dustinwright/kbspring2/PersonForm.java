@@ -1,4 +1,4 @@
-package hello;
+package dev.dustinwright.kbspring2;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Max;
