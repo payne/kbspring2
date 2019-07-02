@@ -1,6 +1,6 @@
 Title: Title of sequence
-A->B: Normal line
-B-->C: Dashed line
-C->>D: Open arrow
-D-->>A: Dashed open arrow
+Kbspring2Aplication -> SpringApplication: run application, do a component scan
+Browser -> SpringApplication: HTTP GET / 
+SpringApplication -> WebController: @GetMapping("/") is showKB()
+showKb -> SpringApplication: returning "kb/kb" means serve kb/kb.html 
 
