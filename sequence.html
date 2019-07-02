@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- From https://bl.ocks.org/eiri/073a9e12f8246927ef997bf6f3ab5561 thanks, google! -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+  </head>
+  <body>
+  <div id="diagram"></div>
+  <script>
+    var request = new XMLHttpRequest();
+    request.open('GET', 'sequence.txt', false);
+    request.send();
+    var sequence = request.responseText;
+    var diagram = Diagram.parse(sequence);
+    diagram.drawSVG("diagram", {theme: 'simple'});
+  </script>
+</html>
