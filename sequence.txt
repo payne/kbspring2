@@ -1,6 +1,9 @@
-Title: Title of sequence
-Kbspring2Aplication -> SpringApplication: run application, do a component scan
+Title: Spring does a component scan when starting
 Browser -> SpringApplication: HTTP GET / 
 SpringApplication -> WebController: @GetMapping("/") is showKB()
-showKb -> SpringApplication: returning "kb/kb" means serve kb/kb.html 
+showKb() -> SpringApplication: returning "kb/kb" means serve kb/kb.html 
+Browser -> WebController: @PostMapping("/newKB") is writeNewKB(Kb article, Model model)
+writeNewKB -> DataAccessObject: saveKB("article.txt", article)
+saveKB -> article.txt: append a line with article data from the HTML form
+writeNewKB -> SprintApplication: returning "kb/reviewNewKB" means serve kb/reviewNewKB.html
 
