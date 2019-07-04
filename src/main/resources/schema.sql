@@ -1,0 +1,1 @@
+create table articles as select * from csvread('src/main/resources/articles.csv');
