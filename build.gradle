@@ -18,6 +18,13 @@ bootJar {
     version =  '0.1.0'
 }
 
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+}
+
 repositories {
     mavenCentral()
 }
@@ -30,6 +37,9 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.hibernate.validator:hibernate-validator")
     compile("org.apache.tomcat.embed:tomcat-embed-el")
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'com.h2database:h2'
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
