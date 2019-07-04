@@ -3,7 +3,12 @@ Browser->SpringApplication: HTTP GET /
 SpringApplication->showKb: @GetMapping("/") is showKB()
 showKb->SpringApplication: returning "kb/kb" means serve kb/kb.html 
 SpringApplication->Browser: HTML
-Browser->writeNewKB: @PostMapping("/newKB") is writeNewKB(Kb article, Model model)
+Browser->SpringApplication: HTTP GET /newKB
+SpringApplication->showNewKB: @GetMapping("/newKB") is showNewKB()
+showNewKB->SpringApplication: returning "kb/newKB" means serve kb/newKB.html 
+SpringApplication->Browser: HTML
+Browser->SpringApplication: HTTP POST /newKB
+SpringApplication->writeNewKB: @PostMapping("/newKB") is writeNewKB(Kb article, Model model)
 writeNewKB->saveKB: ("article.txt", article)
 saveKB->article.txt: HTML data appeneded
 writeNewKB->SpringApplication: returning "kb/reviewNewKB" means serve kb/reviewNewKB.html
