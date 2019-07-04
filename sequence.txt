@@ -1,9 +1,11 @@
-Title: Spring does a component scan when starting
-Browser -> SpringApplication: HTTP GET / 
-SpringApplication -> WebController: @GetMapping("/") is showKB()
-showKb() -> SpringApplication: returning "kb/kb" means serve kb/kb.html 
-Browser -> WebController: @PostMapping("/newKB") is writeNewKB(Kb article, Model model)
-writeNewKB() -> DataAccessObject: saveKB("article.txt", article)
-saveKB() -> article.txt: append a line with article data from the HTML form
-writeNewKB() -> SpringApplication: returning "kb/reviewNewKB" means serve kb/reviewNewKB.html
+Title: Spring does a component scan when starting -- building lookup tables from annotations etc
+Browser->SpringApplication: HTTP GET / 
+SpringApplication->showKb: @GetMapping("/") is showKB()
+showKb->SpringApplication: returning "kb/kb" means serve kb/kb.html 
+SpringApplication->Browser: HTML
+Browser->writeNewKB: @PostMapping("/newKB") is writeNewKB(Kb article, Model model)
+writeNewKB->saveKB: ("article.txt", article)
+saveKB->article.txt: HTML data appeneded
+writeNewKB->SpringApplication: returning "kb/reviewNewKB" means serve kb/reviewNewKB.html
+SpringApplication->Browser: HTML
 
