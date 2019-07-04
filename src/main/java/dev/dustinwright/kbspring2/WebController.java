@@ -2,6 +2,7 @@ package dev.dustinwright.kbspring2;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,6 +12,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Controller
 public class WebController implements WebMvcConfigurer {
+	
+	
+	@Autowired
+	private KbRepository kbRepository;
+	
 	@GetMapping("/")
 	public String showKB() {
 		return "kb/kb"; // First kb is the folder, second refers to the file kb.html
@@ -21,6 +27,7 @@ public class WebController implements WebMvcConfigurer {
 		System.out.println(article);
 		DataAccessObject dao = new DataAccessObject();
 		dao.saveKb("articles.txt", article);
+		kbRepository.save(article);
 		System.out.println("Back from saveKb article="+article);
     // https://www.baeldung.com/spring-mvc-model-model-map-model-view
     model.addAttribute("KB", article);
